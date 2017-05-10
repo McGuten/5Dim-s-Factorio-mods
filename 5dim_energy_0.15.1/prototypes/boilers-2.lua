@@ -112,6 +112,16 @@ data:extend({
       },
       production_type = "output"
     },
+    fluid_input =
+    {
+      name = "water",
+      amount = 0.0
+    },
+    fluid_output =
+    {
+      name = "steam",
+      amount = 0.0
+    },
     energy_consumption = "1.8MW",
     energy_source =
     {
