@@ -230,12 +230,14 @@ data.raw.recipe["lubricant"].subgroup = "liquid-recipe"
 data.raw.recipe["coal-liquefaction"].subgroup = "liquid-recipe"
 -- Barreling
 for _,fluid in pairs(data.raw.fluid) do
-	local barrel = fluid.name .. "-barrel"
-	local fill = "fill-" .. fluid.name .. "-barrel"
-	local empty = "empty-" .. fluid.name .. "-barrel"
-	data.raw.item[barrel].subgroup = "liquid-item"
-	data.raw.recipe[fill].subgroup = "liquid-fill"
-	data.raw.recipe[empty].subgroup = "liquid-empty"
+	if fluid.name ~= "steam" then
+		local barrel = fluid.name .. "-barrel"
+		local fill = "fill-" .. fluid.name .. "-barrel"
+		local empty = "empty-" .. fluid.name .. "-barrel"
+		data.raw.item[barrel].subgroup = "liquid-item"
+		data.raw.recipe[fill].subgroup = "liquid-fill"
+		data.raw.recipe[empty].subgroup = "liquid-empty"
+	end
 end
 
 --Logistic
