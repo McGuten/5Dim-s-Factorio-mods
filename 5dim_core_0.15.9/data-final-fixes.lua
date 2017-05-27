@@ -91,7 +91,12 @@ require("prototypes.item-group-changes")
 
 		else
 			for _,item in pairs(data.raw.unit) do
-				item.healing_per_tick = item.healing_per_tick * settings.startup["5d-bicho-healing"].value
+				if item.healing_per_tick then
+					  item.healing_per_tick = item.healing_per_tick * settings.startup["5d-bicho-healing"].value
+				else
+					item.healing_per_tick = 0.01 * settings.startup["5d-bicho-healing"].value
+				end
+				
 			end
 		end
 
