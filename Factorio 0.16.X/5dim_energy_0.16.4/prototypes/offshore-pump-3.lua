@@ -35,39 +35,57 @@ data:extend({
     type = "offshore-pump",
     name = "5d-offshore-pump-2",
     icon = "__5dim_energy__/graphics/icon/icon_5d_offshore-pump_3_.png",
-    flags = {"placeable-neutral", "player-creation", "filter-directions"},
-    minable = {mining_time = 1, result = "5d-offshore-pump-2"},
     icon_size = 32,
-    max_health = 80,
+    flags = {"placeable-neutral", "player-creation", "filter-directions"},
+    collision_mask = { "ground-tile", "object-layer" },
+    fluid_box_tile_collision_test = { "ground-tile" },
+    adjacent_tile_collision_test = { "water-tile" },
+    minable = {mining_time = 1, result = "5d-offshore-pump-2"},
+    --default offshore pump max_health is 150 now, it was set @ 80.
+    max_health = 150,
     corpse = "small-remnants",
     fluid = "water",
+    --default offshore pump has 30 impact resistance too.
     resistances =
     {
       {
         type = "fire",
         percent = 70
+      },
+      {
+        type = "impact",
+        percent = 30
       }
     },
-    collision_box = {{-0.6, -0.3}, {0.6, 0.3}},
+    fast_replaceable_group = "offshore-pump",
+    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
     selection_box = {{-1, -1.49}, {1, 0.49}},
     fluid_box =
     {
-      base_area = 5,
+      base_area = 1,
+      base_level = 1,
       pipe_covers = pipecoverspictures(),
+	  production_type = "output",
       pipe_connections =
       {
-        { position = {0, 1} },
+        {
+          position = {0, 1},
+          type = "output"
+        },
       },
     },
+    --pumping speed change vanila pump is 20, this one is 100
     pumping_speed = 100,
     tile_width = 1,
+    tile_height = 1,	
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
       north =
       {
         filename = "__5dim_energy__/graphics/icon/icon_5d_offshore-pump_3.png",
         priority = "high",
-        shift = {0.9, 0.05},
+        shift = {0.90625, 0.0625},
         width = 160,
         height = 102
       },
@@ -75,7 +93,7 @@ data:extend({
       {
         filename = "__5dim_energy__/graphics/icon/icon_5d_offshore-pump_3.png",
         priority = "high",
-        shift = {0.9, 0.05},
+        shift = {0.90625, 0.0625},
         x = 160,
         width = 160,
         height = 102
@@ -84,74 +102,34 @@ data:extend({
       {
         filename = "__5dim_energy__/graphics/icon/icon_5d_offshore-pump_3.png",
         priority = "high",
-        shift = {0.9, 0.65},
+	---adjusted to fix detail spill from west image
+        shift = {0.75, 0.65625},
         x = 320,
-        width = 160,
+        width = 150,
         height = 102
       },
       west =
       {
         filename = "__5dim_energy__/graphics/icon/icon_5d_offshore-pump_3.png",
         priority = "high",
-        shift = {1.0, 0.05},
-        x = 480,
-        width = 160,
+	---adjusted to fix detail clipping
+        shift = {0.78125, 0.0625},
+        x = 470,
+        width = 170,
         height = 102
       }
     },
-    circuit_wire_connection_points =
+     placeable_position_visualization =
     {
-      {
-        shadow =
-        {
-          red = {2.7125, 0.20625},
-          green = {2.7125, 0.20625},
-        },
-        wire =
-        {
-          red = {0.4, -0.41875},
-          green = {0.4, -0.41875},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {2.025, 0.83125},
-          green = {2.025, 0.83125},
-        },
-        wire =
-        {
-          red = {0.36875, -0.1375},
-          green = {0.36875, -0.1375},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {1.09, 1.025},
-          green = {1.09, 1.025},
-        },
-        wire =
-        {
-          red = {-0.50625, 0.2125},
-          green = {-0.50625, 0.2125},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {1.6875, -0.10625},
-          green = {1.6875, -0.10625},
-        },
-        wire =
-        {
-          red = {-0.34375, -0.73125},
-          green = {-0.34375, -0.73125},
-        }
-      }
+      filename = "__core__/graphics/cursor-boxes-32x32.png",
+      priority = "extra-high-no-scale",
+      width = 64,
+      height = 64,
+      scale = 0.5,
+      x = 3*64
     },
-    circuit_wire_connection_points = circuit_connector_definitions["pump"].points,
-    circuit_connector_sprites = circuit_connector_definitions["pump"].sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
+    circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
     circuit_wire_max_distance = default_circuit_wire_max_distance
-  },
+}
 })
