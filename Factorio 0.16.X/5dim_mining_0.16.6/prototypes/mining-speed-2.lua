@@ -20,7 +20,7 @@ data:extend({
     energy_required = 2,
     ingredients =
     {
-      {"5d-mining-drill-range-1", 1},
+      {"5d-mining-drill-speed-2", 1},
       {"steel-plate", 10},
       {"advanced-circuit", 2},
     },
