@@ -2,40 +2,43 @@ data:extend({
 -- Item
   {
     type = "item",
-    name = "5d-electric-pole-4",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_4_.png",
+    name = "5d-electric-pole-6",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_6_.png",
     flags = {"goes-to-quickbar"},
     icon_size = 32,
     subgroup = "energy-pole",
-    order = "c",
-    place_result = "5d-electric-pole-4",
+    order = "z",
+    place_result = "5d-electric-pole-6",
     stack_size = 50
   },
 
 --Recipe
   {
     type = "recipe",
-    name = "5d-electric-pole-4",
+    name = "5d-electric-pole-6",
     enabled = "false",
     ingredients =
     {
-      {"steel-plate", 4},
-      {"iron-plate", 4},
-      {"copper-plate", 4}
+      {"advanced-circuit", 20},
+      {"processing-unit", 1},
+      {"steel-plate", 100},
+      {"iron-plate", 100},
+      {"copper-plate", 100}
     },
-    result = "5d-electric-pole-4"
+    result = "5d-electric-pole-6"
   },
 
 --Entity
   {
     type = "electric-pole",
-    name = "5d-electric-pole-4",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_4_.png",
+    name = "5d-electric-pole-6",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_6_.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "5d-electric-pole-4"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "5d-electric-pole-6"},
     icon_size = 32,
     max_health = 150,
     corpse = "medium-remnants",
+    track_coverage_during_build_by_moving = true,
     resistances = 
     {
       {
@@ -46,11 +49,11 @@ data:extend({
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
-    maximum_wire_distance = 20,
-    supply_area_distance = 7.5,
+    maximum_wire_distance = 64,
+    supply_area_distance = 24.5,
     pictures =
     {
-      filename = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_4.png",
+      filename = "__5dim_energy__/graphics/icon/icon_5d_big-electric-pole_6.png",
       priority = "high",
       width = 136,
       height = 122,
@@ -58,6 +61,7 @@ data:extend({
       direction_count = 4,
       shift = {1.4, -1.0}
     },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     connection_points =
     {
       {
@@ -116,40 +120,12 @@ data:extend({
           red = {-0.24, -2.55}
         }
       }
-    },
-    copper_wire_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/copper-wire.png",
-      priority = "extra-high-no-scale",
-      width = 224,
-      height = 46
-    },
-    green_wire_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/green-wire.png",
-      priority = "extra-high-no-scale",
-      width = 224,
-      height = 46
-    },
+    },  
     radius_visualisation_picture =
     {
       filename = "__base__/graphics/entity/small-electric-pole/electric-pole-radius-visualization.png",
       width = 12,
       height = 12
     },
-    red_wire_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/red-wire.png",
-      priority = "extra-high-no-scale",
-      width = 224,
-      height = 46
-    },
-    wire_shadow_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/wire-shadow.png",
-      priority = "extra-high-no-scale",
-      width = 224,
-      height = 46
-    }
   },
 })

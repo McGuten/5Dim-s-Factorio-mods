@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.16.5
+Date: 06/01/2018
+  News:
+    - Added changelog.txt.
+---------------------------------------------------------------------------------------------------
+Version: 0.16.6
+Date: 14/01/2018
+  News:
+    - Fixes for offshore pumps and make it fast replaceable group.
+---------------------------------------------------------------------------------------------------
+Version: 0.16.7
+Date: 26/01/2018
+  News:
+    - Added circuit network connections and vehicle impact sound to accumulator mk2/3.
+    - Tweaked accumulator mk3 discharge light color to match its animation.
+    - Added circuit network connection and coloring to the lamp(5d-lamp).
+    - Added missing vehicle impact sounds.

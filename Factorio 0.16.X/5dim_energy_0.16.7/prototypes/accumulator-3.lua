@@ -80,7 +80,8 @@ data:extend({
       animation_speed = 0.5
     },
     discharge_cooldown = 60,
-    discharge_light = {intensity = 0.7, size = 7},
+    discharge_light = {intensity = 0.7, size = 7, color = {r = 192.0, g = 147.0, b = 178.0}},
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
       sound =
@@ -94,5 +95,11 @@ data:extend({
       },
       max_sounds_per_type = 5
     },
+    
+    circuit_wire_connection_point = circuit_connector_definitions["accumulator"].points,
+    circuit_connector_sprites = circuit_connector_definitions["accumulator"].sprites,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
+
+    default_output_signal = {type = "virtual", name = "signal-A"}
   },
 })

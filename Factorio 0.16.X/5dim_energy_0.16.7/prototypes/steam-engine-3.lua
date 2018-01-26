@@ -2,44 +2,44 @@ data:extend({
 -- Item
   {
     type = "item",
-    name = "5d-steam-engine-2",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_steam-engine_2_.png",
+    name = "5d-steam-engine-3",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_steam-engine_3_.png",
     flags = {"goes-to-quickbar"},
     icon_size = 32,
     subgroup = "energy-engine-1",
     order = "b[steam-power]-b[steam-engine]",
-    place_result = "5d-steam-engine-2",
+    place_result = "5d-steam-engine-3",
     stack_size = 50
   },
 
 --Recipe
   {
     type = "recipe",
-    name = "5d-steam-engine-2",
+    name = "5d-steam-engine-3",
     enabled = "false",
     ingredients =
     {
-      {"electronic-circuit", 8},
-      {"iron-gear-wheel", 8},
-      {"pipe", 8},
-      {"steel-plate", 8},
-      {"steam-engine", 1},
+      {"electronic-circuit", 12},
+      {"iron-gear-wheel", 12},
+      {"pipe", 12},
+      {"iron-plate", 12},
+      {"5d-steam-engine-2", 1},
     },
-    result = "5d-steam-engine-2"
+    result = "5d-steam-engine-3"
   },
 
 --Entity
   {
     type = "generator",
-    name = "5d-steam-engine-2",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_steam-engine_2_.png",
+    name = "5d-steam-engine-3",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_steam-engine_3_.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "5d-steam-engine-2"},
+    minable = {mining_time = 1, result = "5d-steam-engine-3"},
     icon_size = 32,
     max_health = 400,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    effectivity = 2,
+    effectivity = 3,
     fluid_usage_per_tick = 0.5,
     maximum_temperature = 165,
     resistances =
@@ -47,6 +47,10 @@ data:extend({
       {
         type = "fire",
         percent = 70
+      },
+      {
+        type = "impact",
+        percent = 30
       }
     },
     collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
@@ -54,7 +58,7 @@ data:extend({
 	  fast_replaceable_group = "steam-engine",
     fluid_box =
     {
-      base_area = 1.2,
+      base_area = 1.5,
       height = 2,
       base_level = -1,
       pipe_covers = pipecoverspictures(),
@@ -74,7 +78,7 @@ data:extend({
     },
     horizontal_animation =
     {
-      filename = "__5dim_energy__/graphics/icon/icon_5d_steam-engine-horizontal_2.png",
+      filename = "__5dim_energy__/graphics/icon/icon_5d_steam-engine-horizontal_3.png",
       width = 246,
       height = 137,
       frame_count = 32,
@@ -83,7 +87,7 @@ data:extend({
     },
     vertical_animation =
     {
-      filename = "__5dim_energy__/graphics/icon/icon_5d_steam-engine-vertical_2.png",
+      filename = "__5dim_energy__/graphics/icon/icon_5d_steam-engine-vertical_3.png",
       width = 155,
       height = 186,
       frame_count = 32,
@@ -101,6 +105,7 @@ data:extend({
         starting_vertical_speed = 0.05
       }
     },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
       sound =
