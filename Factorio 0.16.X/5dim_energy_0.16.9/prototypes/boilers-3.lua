@@ -1,8 +1,8 @@
-boilerfires2 =
+boilerfires3 =
 {
   down =
   {
-    filename = "__5dim_energy__/graphics/icon/boiler-fire-down_2.png",
+    filename = "__5dim_energy__/graphics/icon/boiler-fire-down_3.png",
     priority = "extra-high",
     width = 11,
     height = 11,
@@ -12,7 +12,7 @@ boilerfires2 =
   },
   left =
   {
-    filename = "__5dim_energy__/graphics/icon/boiler-fire-left_2.png",
+    filename = "__5dim_energy__/graphics/icon/boiler-fire-left_3.png",
     priority = "extra-high",
     width = 5,
     height = 7,
@@ -21,7 +21,7 @@ boilerfires2 =
   },
   right =
   {
-    filename = "__5dim_energy__/graphics/icon/boiler-fire-right_2.png",
+    filename = "__5dim_energy__/graphics/icon/boiler-fire-right_3.png",
     priority = "extra-high",
     width = 6,
     height = 9,
@@ -34,41 +34,41 @@ data:extend({
 -- Item
   {
     type = "item",
-    name = "5d-boiler",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_boiler_2_.png",
+    name = "5d-boiler-2",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_boiler_3_.png",
     flags = {"goes-to-quickbar"},
     icon_size = 32,
     subgroup = "energy-boiler",
-    order = "b",
-    place_result = "5d-boiler",
+    order = "c",
+    place_result = "5d-boiler-2",
     stack_size = 50
   },
 
 --Recipe
   {
     type = "recipe",
-    name = "5d-boiler",
+    name = "5d-boiler-2",
     enabled = "false",
     ingredients = 
 	{
 		{"steel-furnace", 1},
-		{"boiler", 1},
+		{"5d-boiler", 1},
 		{"pipe", 3},
 	},
-    result = "5d-boiler"
+    result = "5d-boiler-2"
   },
 
 --Entity
 
   {
     type = "boiler",
-    name = "5d-boiler",
-    icon = "__5dim_energy__/graphics/icon/icon_5d_boiler_2_.png",
+    name = "5d-boiler-2",
+    icon = "__5dim_energy__/graphics/icon/icon_5d_boiler_3_.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "5d-boiler"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "5d-boiler-2"},
     icon_size = 32,
     max_health = 200,
-    corpse = "small-remnants",
+    corpse = "medium-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     mode = "output-to-separate-pipe",
     resistances =
@@ -121,7 +121,7 @@ data:extend({
     {
       type = "burner",
       fuel_category = "chemical",
-      effectivity = 0.75,
+      effectivity = 1,
       fuel_inventory_size = 1,
       emissions = 0.1 / 6.5,
       smoke =
