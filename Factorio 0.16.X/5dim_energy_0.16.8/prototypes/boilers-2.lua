@@ -68,7 +68,7 @@ data:extend({
     minable = {hardness = 0.2, mining_time = 0.5, result = "5d-boiler"},
     icon_size = 32,
     max_health = 200,
-    corpse = "small-remnants",
+    corpse = "medium-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     mode = "output-to-separate-pipe",
     resistances =
