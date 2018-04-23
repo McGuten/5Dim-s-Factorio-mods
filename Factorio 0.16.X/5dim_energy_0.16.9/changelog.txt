@@ -21,3 +21,8 @@ Version: 0.16.8
 Date: 22/02/2018
   News:
     - Added description.
+---------------------------------------------------------------------------------------------------
+Version: 0.16.9
+Date: 23/04/2018
+  News:
+    - Changed Boiler corpse to match its size.
