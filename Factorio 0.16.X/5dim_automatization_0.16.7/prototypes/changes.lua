@@ -2,6 +2,7 @@ data.raw["assembling-machine"]["chemical-plant"].fast_replaceable_group = "chemi
 data.raw["assembling-machine"]["oil-refinery"].fast_replaceable_group = "oil-refinery"
 data.raw["loader"]["loader"].icon = "__5dim_automatization__/graphics/icon/loader_.png";
 data.raw.item["loader"].icon = "__5dim_automatization__/graphics/icon/loader_.png";
+data.raw.item["loader"].flags = {"goes-to-quickbar"};
 data.raw["loader"]["loader"].structure =
 {
 	direction_in =
@@ -28,6 +29,7 @@ data.raw["loader"]["loader"].structure =
 };
 data.raw["loader"]["fast-loader"].icon = "__5dim_automatization__/graphics/icon/fast-loader_.png";
 data.raw.item["fast-loader"].icon = "__5dim_automatization__/graphics/icon/fast-loader_.png";
+data.raw.item["fast-loader"].flags = {"goes-to-quickbar"};
 data.raw["loader"]["fast-loader"].structure =
 {
 	direction_in =
@@ -54,6 +56,7 @@ data.raw["loader"]["fast-loader"].structure =
 };
 data.raw["loader"]["express-loader"].icon = "__5dim_automatization__/graphics/icon/express-loader_.png";
 data.raw.item["express-loader"].icon = "__5dim_automatization__/graphics/icon/express-loader_.png";
+data.raw.item["express-loader"].flags = {"goes-to-quickbar"};
 data.raw["loader"]["express-loader"].structure =
 {
 	direction_in =
