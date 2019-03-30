@@ -63,7 +63,7 @@ data:extend({
         recipe = "5d-basic-accumulator-2"
       }
     },
-    prerequisites = {"electric-energy-accumulators-1"},
+    prerequisites = {"electric-energy-accumulators"}, --removed the "-1" to conform to the new tech name
     unit =
     {
       count = 100,
